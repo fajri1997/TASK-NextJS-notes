@@ -1,3 +1,4 @@
+import { register } from "@/actions/auth";
 import Input from "@/components/Input";
 
 function Register() {
@@ -6,7 +7,7 @@ function Register() {
       <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
         <h2 className="text-3xl text-white font-semibold mb-6">Register</h2>
         {/* Wire up the register action */}
-        <form>
+        <form action={register}>
           <div className="mb-4">
             <label
               htmlFor="name"
@@ -14,11 +15,7 @@ function Register() {
             >
               Name
             </label>
-            <Input
-              type="text"
-              name="name"
-              required
-            />
+            <Input type="text" name="name" required />
           </div>
           <div className="mb-4">
             <label
@@ -27,11 +24,7 @@ function Register() {
             >
               Email
             </label>
-            <Input
-              type="email"
-              name="email"
-              required
-            />
+            <Input type="email" name="email" required />
           </div>
           <div className="mb-4">
             <label
@@ -40,11 +33,7 @@ function Register() {
             >
               Password
             </label>
-            <Input
-              type="password"
-              name="password"
-              required
-            />
+            <Input type="password" name="password" required />
           </div>
           <div className="mb-6">
             <label
@@ -72,6 +61,6 @@ function Register() {
       </div>
     </div>
   );
-};
+}
 
 export default Register;

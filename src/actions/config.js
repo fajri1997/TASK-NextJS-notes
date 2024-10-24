@@ -1,12 +1,15 @@
+import { getToken } from "@/lib/token";
+
 const baseUrl = "https://task-react-auth-backend.eapi.joincoded.com/api";
 
 async function getHeaders() {
-  const headers = new Headers()
-  headers.append("Content-Type", "application/json")
+  const token = await getToken();
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
   // Add an authorization header
+  headers.append("Authorization", `Bearer ${token}`);
 
-  return headers
+  return headers;
 }
 
-
-export { getHeaders, baseUrl }
+export { getHeaders, baseUrl };

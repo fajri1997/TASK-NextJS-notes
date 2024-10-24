@@ -1,3 +1,4 @@
+import { login } from "@/actions/auth";
 import Input from "@/components/Input";
 
 function Login() {
@@ -6,7 +7,7 @@ function Login() {
       <div className="max-w-md w-full px-6 py-8 bg-gray-800 rounded-md shadow-md">
         <h2 className="text-3xl text-white font-semibold mb-6">Login</h2>
         {/* Wire up the login action */}
-        <form>
+        <form action={login}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -37,6 +38,6 @@ function Login() {
       </div>
     </div>
   );
-};
+}
 
 export default Login;
